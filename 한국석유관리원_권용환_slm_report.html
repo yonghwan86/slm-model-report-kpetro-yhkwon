@@ -622,7 +622,7 @@ body.edit-mode::after{
       </div>
       <div class="id-cell">
         <span class="k">Hugging Face 모델 링크</span>
-        <span class="v" contenteditable="true" data-ph="https://huggingface.co/...">huggingface.co/LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct</span>
+        <span class="v" contenteditable="true" data-ph="https://huggingface.co/...">https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct</span>
       </div>
     </div>
   </div>
@@ -630,7 +630,11 @@ body.edit-mode::after{
   <!-- ========== SECTION 1 ========== -->
   <div class="sec">
     <h2><span class="num">01</span>모델 선택 이유</h2>
-    <div class="body" contenteditable="true" data-ph="이 모델을 선택한 이유를 작성합니다. 특정 산업, 공공 업무, 행정, 문서처리, 질의응답 등 어떤 관점에서 적합하다고 판단했는지 설명합니다."><strong>EXAONE-3.5-2.4B-Instruct는 LG AI Research가 2024년 12월 공개한 한국어·영어 이중 언어 instruction-tuned 모델로, 공공 행정 영역에 적용하기에 가장 균형이 잘 잡힌 SLM이다.</strong> 선택 근거는 네 가지다. 첫째, <strong>한국어 성능</strong>이다. 동일 체급(2~3B대) 글로벌 모델인 Llama 3.2 3B, Qwen 2.5 3B, Gemma 2 2B 대비 한국어 멀티턴 벤치마크 KoMT-Bench에서 7.24점(Llama 3.2 3B는 3.16점), 한국어 추론 벤치마크 LogicKor에서 8.51점(Llama 3.2 3B는 2.86점)으로 압도적 격차를 보인다. 행정 문서·민원 응대처럼 한국어 정확도가 결정적인 도메인에 직접 부합한다. 둘째, <strong>32K 토큰 컨텍스트 길이</strong>다. 같은 체급 다수 모델이 4K~16K에 머무는 반면, 32K 컨텍스트는 수십 페이지 분량의 보고서·법령·회의록을 한 번에 입력해 RAG·요약·질의응답 파이프라인을 구성하기에 충분하다. 셋째, <strong>모델 카드와 기술 보고서의 투명성</strong>이다. arXiv 2412.04862 기술 보고서가 사전학습 토큰 수(6.5T), GQA 구조, BBPE 토크나이저, decontamination 절차, SFT/DPO 파이프라인까지 명시하고 있어 도입 의사결정에 필요한 근거가 충분하다. 넷째, <strong>경량 배포 친화성</strong>이다. 2.4B 파라미터는 GGUF Q4_K_M 양자화 시 약 1.5~2GB 수준으로, 단일 GPU(8GB) 또는 고사양 CPU 환경에서도 추론 가능해 폐쇄망 온프레미스가 필수인 공공 환경에 적합하다. 단, 라이선스가 비상업(NC)인 점은 본 보고서의 한계 항목에서 별도로 다룬다.</div>
+    <div class="body" contenteditable="true" data-ph="이 모델을 선택한 이유를 작성합니다. 특정 산업, 공공 업무, 행정, 문서처리, 질의응답 등 어떤 관점에서 적합하다고 판단했는지 설명합니다."><strong>EXAONE-3.5-2.4B-Instruct는 LG AI Research가 2024년 12월 공개한 한국어·영어 이중 언어 instruction-tuned 모델로, 공공 행정 영역에 적용하기에 가장 균형이 잘 잡힌 SLM이다.</strong> 선택 근거는 네 가지다.<br>
+첫째, <strong>한국어 성능</strong>이다. 동일 체급(2~3B대) 글로벌 모델인 Llama 3.2 3B, Qwen 2.5 3B, Gemma 2 2B 대비 한국어 멀티턴 벤치마크 KoMT-Bench에서 7.24점(Llama 3.2 3B는 3.16점), 한국어 추론 벤치마크 LogicKor에서 8.51점(Llama 3.2 3B는 2.86점)으로 압도적 격차를 보인다. 행정 문서·민원 응대처럼 한국어 정확도가 결정적인 도메인에 직접 부합한다.<br>
+둘째, <strong>32K 토큰 컨텍스트 길이</strong>다. 같은 체급 다수 모델이 4K~16K에 머무는 반면, 32K 컨텍스트는 수십 페이지 분량의 보고서·법령·회의록을 한 번에 입력해 RAG·요약·질의응답 파이프라인을 구성하기에 충분하다.<br> 
+셋째, <strong>모델 카드와 기술 보고서의 투명성</strong>이다. arXiv 2412.04862 기술 보고서가 사전학습 토큰 수(6.5T), GQA 구조, BBPE 토크나이저, decontamination 절차, SFT/DPO 파이프라인까지 명시하고 있어 도입 의사결정에 필요한 근거가 충분하다.<br>
+넷째, <strong>경량 배포 친화성</strong>이다. 2.4B 파라미터는 GGUF Q4_K_M 양자화 시 약 1.5~2GB 수준으로, 단일 GPU(8GB) 또는 고사양 CPU 환경에서도 추론 가능해 폐쇄망 온프레미스가 필수인 공공 환경에 적합하다. 단, 라이선스가 비상업(NC)인 점은 본 보고서의 한계 항목에서 별도로 다룬다.</div>
   </div>
 
   <!-- ========== SECTION 2 ========== -->
@@ -648,7 +652,10 @@ body.edit-mode::after{
   <!-- ========== SECTION 3 ========== -->
   <div class="sec">
     <h2><span class="num">03</span>학습 데이터와 튜닝 방식</h2>
-    <div class="body" contenteditable="true" data-ph="모델이 어떤 데이터로 사전학습되었는지, 공개 데이터인지, 특정 산업·언어·도메인 데이터가 포함되었는지, Instruction Tuning · SFT · RLHF · DPO · LoRA · QLoRA 등 어떤 튜닝이 적용되었는지 정리합니다. 모델 카드에 명확히 공개되어 있지 않다면 '공개 범위 내에서는 확인 어려움'이라고 작성합니다."><strong>① 사전학습(Pre-training)</strong> — 기술 보고서(arXiv 2412.04862)에 따르면 2.4B 모델은 총 <strong>6.5조(6.5T) 토큰</strong>으로 사전학습되었으며, 어휘 비율은 <strong>한국어 50% · 영어 50%</strong>로 균형 있게 구성된다. 학습은 2단계로 진행됐다. 1단계는 다양한 출처의 대규모 일반 도메인 코퍼스를 사용했고, 2단계에서 long-context fine-tuning을 적용해 max_position_embeddings를 8,192에서 32,768로 확장했다(replay 기반 기법으로 catastrophic forgetting을 완화). 다만 구체적인 데이터셋의 출처·규모는 영업비밀로 간주되어 공개되지 않았으며, 기술 보고서는 "AI Compliance review를 거쳐 저작권·지식재산·개인정보 위험을 검토했다"는 수준으로만 기술한다. <strong>② 데이터 정제(Decontamination)</strong> — 학습 데이터에 평가 벤치마크의 테스트 셋이 우연히 섞여 들어가는 문제를 막기 위해 substring-level matching(슬라이딩 윈도우 50자, 무작위 샘플 N=10)을 적용했다고 명시한다. <strong>③ Instruction Tuning(SFT)</strong> — 800만 건의 웹 코퍼스에서 분류체계(taxonomy) 기반으로 핵심 지식을 추출한 뒤, instruction evolution 기법(WizardLM 계열 방법)으로 난이도를 다양화한 instruction-response 쌍을 합성해 Supervised Fine-Tuning을 수행했다. <strong>④ Preference Optimization</strong> — DAA(Direct Alignment Algorithms) 계열인 <strong>DPO</strong>와 <strong>SimPO</strong>를 다단계로 적용했다. 다중 모델에서 N개 응답을 샘플링한 뒤 reward model 점수로 chosen/rejected 쌍을 만들고, 두 reward model 간 동의도(agreement)가 임계값 이하인 쌍은 필터링했다. M0(SFT 모델)→M1→M2 순으로 순차 학습하는 staged 파이프라인을 채택해 over-optimization을 완화했다. <strong>⑤ 적용되지 않은(또는 미공개) 기법</strong> — 기술 보고서와 모델 카드 모두 LoRA·QLoRA·RLHF(PPO) 적용 여부는 언급이 없다. 공개 범위 내에서는 풀 파라미터 SFT + DPO/SimPO 조합으로 보는 것이 합리적이다.</div>
+    <div class="body" contenteditable="true" data-ph="모델이 어떤 데이터로 사전학습되었는지, 공개 데이터인지, 특정 산업·언어·도메인 데이터가 포함되었는지, Instruction Tuning · SFT · RLHF · DPO · LoRA · QLoRA 등 어떤 튜닝이 적용되었는지 정리합니다. 모델 카드에 명확히 공개되어 있지 않다면 '공개 범위 내에서는 확인 어려움'이라고 작성합니다."><strong>① 사전학습(Pre-training)</strong> — 기술 보고서(arXiv 2412.04862)에 따르면 2.4B 모델은 총 <strong>6.5조(6.5T) 토큰</strong>으로 사전학습되었으며, 어휘 비율은 <strong>한국어 50% · 영어 50%</strong>로 균형 있게 구성된다. 학습은 2단계로 진행됐다. 1단계는 다양한 출처의 대규모 일반 도메인 코퍼스를 사용했고, 2단계에서 long-context fine-tuning을 적용해 max_position_embeddings를 8,192에서 32,768로 확장했다(replay 기반 기법으로 catastrophic forgetting을 완화). 다만 구체적인 데이터셋의 출처·규모는 영업비밀로 간주되어 공개되지 않았으며, 기술 보고서는 "AI Compliance review를 거쳐 저작권·지식재산·개인정보 위험을 검토했다"는 수준으로만 기술한다.<br>
+<strong>② 데이터 정제(Decontamination)</strong> — 학습 데이터에 평가 벤치마크의 테스트 셋이 우연히 섞여 들어가는 문제를 막기 위해 substring-level matching(슬라이딩 윈도우 50자, 무작위 샘플 N=10)을 적용했다고 명시한다.<br>
+<strong>③ Instruction Tuning(SFT)</strong> — 800만 건의 웹 코퍼스에서 분류체계(taxonomy) 기반으로 핵심 지식을 추출한 뒤, instruction evolution 기법(WizardLM 계열 방법)으로 난이도를 다양화한 instruction-response 쌍을 합성해 Supervised Fine-Tuning을 수행했다.<br><strong>④ Preference Optimization</strong> — DAA(Direct Alignment Algorithms) 계열인 <strong>DPO</strong>와 <strong>SimPO</strong>를 다단계로 적용했다. 다중 모델에서 N개 응답을 샘플링한 뒤 reward model 점수로 chosen/rejected 쌍을 만들고, 두 reward model 간 동의도(agreement)가 임계값 이하인 쌍은 필터링했다. M0(SFT 모델)→M1→M2 순으로 순차 학습하는 staged 파이프라인을 채택해 over-optimization을 완화했다.<br>
+<strong>⑤ 적용되지 않은(또는 미공개) 기법</strong> — 기술 보고서와 모델 카드 모두 LoRA·QLoRA·RLHF(PPO) 적용 여부는 언급이 없다. 공개 범위 내에서는 풀 파라미터 SFT + DPO/SimPO 조합으로 보는 것이 합리적이다.</div>
   </div>
 
   <!-- ========== SECTION 4 ========== -->
@@ -673,20 +680,40 @@ body.edit-mode::after{
   <!-- ========== SECTION 6 ========== -->
   <div class="sec">
     <h2><span class="num">06</span>활용 가능 업무</h2>
-    <div class="body" contenteditable="true" data-ph="공공기관 행정·민원 응대·내부 문서 분석·질의응답·요약·RAG 검색·챗봇·보고서 초안 작성 등 어떤 업무에 어떻게 활용 가능한지 구체 시나리오로 작성합니다."><strong>EXAONE-3.5-2.4B-Instruct는 ① 한국어 정확도 ② 32K 장문 컨텍스트 ③ 경량 배포라는 세 가지 강점이 결합돼, 공공기관·행정 영역에서 다음 시나리오에 직접 적용할 수 있다.</strong> <strong>(1) 민원 응대 챗봇 / FAQ 자동화</strong> — 자주 묻는 질의에 대한 1차 응답을 자동 생성하고, 사람 상담사에게는 본 모델이 제안한 답변 초안과 근거 문서를 함께 전달하는 human-in-the-loop 구조에 적합하다. KoMT-Bench 7.24점·LogicKor 8.51점은 동급 모델 중 최상위로, 한국어 자연스러움·존댓말·정중도 면에서 그대로 사용 가능한 수준이다. <strong>(2) 한국어 RAG(Retrieval-Augmented Generation) 시스템</strong> — 본 모델이 가장 빛을 발하는 영역이다. Ko-LongRAG 벤치마크에서 74.7점, Ko-WebRAG 73.0점으로 동급 외산 모델(Qwen 2.5 3B 40.5/34.7, Llama 3.2 3B 39.3/50.0)을 큰 격차로 앞선다. 32K 컨텍스트에 검색된 법령·고시·내부 규정 청크를 다수 주입하고 출처와 함께 답변을 생성하는 구조로, 정책 자료 Q&amp;A·법령 검색 도우미 구축에 매우 강하다. <strong>(3) 내부 문서 요약</strong> — 회의록·감사보고서·정책연구보고서를 32K 토큰 단위로 한 번에 입력해 핵심 결정사항·액션 아이템을 추출. <strong>(4) 보고서·공문 초안 작성 보조</strong> — 사용자가 개요만 제시하면 보고서 형식에 맞춘 초안을 생성. SFT 단계의 instruction evolution 학습 효과로 길이·형식 지시 이행 능력이 우수하다(IFEval 73.6점, 동급 최상위권). <strong>(5) 폐쇄망 온프레미스 배포</strong> — Q4_K_M GGUF 양자화 시 약 1.5~2GB로, RTX 3060(12GB) 또는 i9 CPU + 16GB RAM 환경에서도 실시간 추론이 가능해 외부망과 분리된 행정 인프라에 직접 올릴 수 있다. <strong>(6) 도메인 추가 학습의 베이스</strong> — 행정용어·법률용어·기관 내부 문서로 LoRA 추가 학습을 진행하면 도메인 특화 어시스턴트로 빠르게 발전 가능하다. 단, 위 모든 시나리오는 NC 라이선스 범위 내 연구·POC 단계에 한정되며, 실서비스 도입은 별도 라이선싱 협의가 전제된다.</div>
+    <div class="body" contenteditable="true" data-ph="공공기관 행정·민원 응대·내부 문서 분석·질의응답·요약·RAG 검색·챗봇·보고서 초안 작성 등 어떤 업무에 어떻게 활용 가능한지 구체 시나리오로 작성합니다."><strong>EXAONE-3.5-2.4B-Instruct를 도입한다면「한국석유관리원내부 직원용 법령·규정 기반 RAG 질의응답 시스템」이 가장 좋을 것 같다.</strong> 한국석유관리원은 「석유 및 석유대체연료 사업법」, 동법 시행령·시행규칙, 「위험물안전관리법」, 산업통상자원부 고시, 내부 검사·시험 매뉴얼 등 광범위한 법령과 규정을 일상 업무에서 참조해야 한다. 특정 검사·민원·정책 사안에 적용되는 조문을 직원이 일일이 검색·대조하는 데 드는 시간이 누적적으로 크고, 조문 간 교차 참조(예: 본법 조항 ↔ 시행령 ↔ 시행규칙 ↔ 고시)가 잦아 단일 키워드 검색만으로는 한계가 있다.<br>
+<strong>① 왜 이 모델인가 — 본 보고서 03·04 섹션에서 도출한 강점이 그대로 발휘되는 시나리오</strong> — (가) <strong>한국어 강점</strong>: 동급 외산 모델 대비 한국어 응답 품질 압도적 우위(KoMT-Bench 7.24, LogicKor 8.51, 03 섹션 평가 결과 참조). 법령 조문의 한국어 해석·재구성·평이한 풀어쓰기에서 자연스러움이 결정적이다. (나) <strong>RAG 친화성 + 32K 컨텍스트</strong>: Ko-LongRAG 74.7점·Ko-WebRAG 73.0점으로 동급 외산 모델(Qwen 2.5 3B 40.5/34.7, Llama 3.2 3B 39.3/50.0)의 약 2배 성능. 32K 토큰 컨텍스트(04 섹션)로 검색된 법령 청크 다수를 동시에 주입해 조문 간 교차 참조 답변이 가능하다.<br>
+<strong>② 예상 시스템 구성</strong> — (1) 「석유사업법」 본법·시행령·시행규칙·관련 고시·내부 매뉴얼을 청크 단위로 분할 후 한국어 임베딩 모델로 인덱싱(벡터 DB). (2) 직원의 자연어 질의 입력 (예: "주유소 내에서 휘발유를 말통으로 판매 할 수 있나?"). (3) BM25 + 벡터 하이브리드 검색으로 관련 조문 후보군 추출. (4) EXAONE-3.5-2.4B-Instruct에 검색 결과를 컨텍스트로 주입하고 "근거 조문 인용을 강제"하는 시스템 프롬프트로 답변 생성. (5) 답변 본문과 함께 출처 조문·시행령 조항을 링크 형태로 표시.<br>
+<strong>③ 기대 효과</strong> — (가) 법령·규정 검색 시간 단축 및 직원 응대 속도 향상, (나) 답변에 항상 근거 조문이 함께 제공되어 신뢰성·감사 추적성 확보, (다) 07 섹션에서 다룬 폐쇄망 온프레미스 배포(GGUF Q4_K_M 약 1.5~2GB)로 내부 검사 자료·민감 정보의 외부 유출 위험 차단, (라) 향후 검사 사례 DB·내부 질의 로그를 추가 인덱싱하면 조직 지식 자산이 누적되어 신규 직원 온보딩에도 활용 가능.<br>
+<strong>④ 적용 범위 명확화</strong> — 본 시나리오는 직원용 의사결정 보조 도구로 한정하며, 대국민 자동 응답·법적 효력 있는 유권 해석에는 사용하지 않는다(07 섹션 한계 참조). 모델 답변은 항상 인간 검토를 전제로 한다.</div>
   </div>
 
   <!-- ========== SECTION 7 ========== -->
   <div class="sec">
     <h2><span class="num">07</span>한계와 주의사항</h2>
-    <div class="body" contenteditable="true" data-ph="성능 한계 · 환각 가능성 · 한국어 지원 수준 · 보안 이슈 · 라이선스 제한 · 상업적 활용 가능 여부 · 평가 데이터 한계 등을 정리합니다."><strong>(1) 라이선스 제약(가장 중요한 한계)</strong> — EXAONE AI Model License Agreement 1.1 - NC는 명시적으로 비상업·연구용으로 사용을 제한한다. 라이선스 3.1조는 매출 발생 가능한 모든 상업적 활용(직·간접 포함)과 본 모델 출력으로 다른 모델을 학습·개선하는 행위를 금지하며, 라이선스 4.2조는 모델 출력물의 권리도 LG가 보유한다고 규정한다. 따라서 행정 서비스에 정식 배포하려면 contact_us@lgresearch.ai를 통한 별도 commercial agreement가 반드시 선행되어야 한다. <strong>(2) 안전성·편향 — 동급 대비는 우수, 절대 수치는 보강 필요</strong> — 한국정보화진흥원(NIA)이 제공한 한국어 LLM 신뢰성 벤치마크 평가에서 2.4B 모델은 편향(Bias) 67.4%, 혐오(Hate) 72.2%, 위법(Illegal) 80.3%, 민감(Sensitiveness) 74.0%로 전체 평균 72.2%를 기록했다. 같은 EXAONE 3.5 시리즈에서도 7.8B(85.6%)·32B(87.1%) 대비 명확히 낮은 수치이므로, 민원 등 외부 노출 서비스에 투입하기 전 추가 안전 필터링·red-teaming이 필수다. <strong>(3) 환각·사실 오류</strong> — 모델 카드가 직접 명시하듯, 통계 기반 토큰 생성 특성상 의미·문법 오류, 편향, 사실 모순이 발생할 수 있고 학습 시점 이후 정보는 반영하지 못한다. 행정 정보처럼 정확성이 결정적인 영역에서는 RAG와 결합해 1차 응답 근거를 외부 지식베이스로 강제해야 한다. <strong>(4) 도메인 특화 미흡</strong> — 일반 도메인 코퍼스로 학습된 범용 모델이므로, 한국 법령·행정용어·민원 분류체계에 대한 즉시성 정확도는 별도 도메인 fine-tuning을 거치지 않으면 한계가 있다. <strong>(5) 운영상 주의</strong> — Transformers 표준 아키텍처가 아니어서 추론 시 trust_remote_code=True가 강제되며, 이는 폐쇄망 보안 정책상 별도의 코드 검증·서명 절차를 요구한다. 또한 기본 가중치는 FP32(약 9.6GB)이므로, 실배포 시 BF16/AWQ/GGUF 양자화 버전 사용을 전제로 인프라를 설계해야 한다. <strong>(6) 학습 데이터 출처 비공개</strong> — 사전학습 코퍼스 전체 목록·비율·라이선스가 공개되지 않아, 공공조달 단계에서 요구되는 데이터 투명성·저작권 검증 요건을 100% 충족하기 어려울 수 있다.</div>
+    <div class="body" contenteditable="true" data-ph="성능 한계 · 환각 가능성 · 한국어 지원 수준 · 보안 이슈 · 라이선스 제한 · 상업적 활용 가능 여부 · 평가 데이터 한계 등을 정리합니다."><strong>(1) 라이선스 제약(가장 중요한 한계)</strong> — EXAONE AI Model License Agreement 1.1 - NC는 명시적으로 비상업·연구용으로 사용을 제한한다. 라이선스 3.1조는 매출 발생 가능한 모든 상업적 활용(직·간접 포함)과 본 모델 출력으로 다른 모델을 학습·개선하는 행위를 금지하며, 라이선스 4.2조는 모델 출력물의 권리도 LG가 보유한다고 규정한다. 따라서 내부 업무용으로 한정한다.<br>
+<strong>(2) 안전성·편향 — 동급 대비는 우수, 절대 수치는 보강 필요</strong> — 한국정보화진흥원(NIA)이 제공한 한국어 LLM 신뢰성 벤치마크 평가에서 2.4B 모델은 편향(Bias) 67.4%, 혐오(Hate) 72.2%, 위법(Illegal) 80.3%, 민감(Sensitiveness) 74.0%로 전체 평균 72.2%를 기록했다. 같은 EXAONE 3.5 시리즈에서도 7.8B(85.6%)·32B(87.1%) 대비 명확히 낮은 수치이므로, 내부 업무 참고용으로만 사용한다.<br>
+<strong>(3) 환각·사실 오류</strong> — 모델 카드가 직접 명시하듯, 통계 기반 토큰 생성 특성상 의미·문법 오류, 편향, 사실 모순이 발생할 수 있고 학습 시점 이후 정보는 반영하지 못한다. 따라서 업무 참고용으로만 사용한다.<br>
+<strong>(4) 운영상 주의</strong> — Transformers 표준 아키텍처가 아니어서 추론 시 trust_remote_code=True가 강제되며, 이는 폐쇄망 보안 정책상 별도의 코드 검증·서명 절차를 요구한다. 또한 기본 가중치는 FP32(약 9.6GB)이므로, 실배포 시 BF16/AWQ/GGUF 양자화 버전 사용을 전제로 인프라를 설계해야 한다.<br>
+<strong>(5) 학습 데이터 출처 비공개</strong> — 사전학습 코퍼스 전체 목록·비율·라이선스가 공개되지 않아, 공공조달 단계에서 요구되는 데이터 투명성·저작권 검증 요건을 100% 충족하기 어려울 수 있다.</div>
   </div>
 
   <!-- ========== SECTION 8 ========== -->
   <div class="sec">
     <h2><span class="num">08</span>종합 의견</h2>
-    <div class="body" contenteditable="true" data-ph="이 모델을 실제 조직 업무에 도입한다면 어떤 조건에서 적합한지, 어떤 추가 검증·POC가 필요한지 본인 의견을 작성합니다."><strong>EXAONE-3.5-2.4B-Instruct는 "한국어 SLM이 필요한 공공·연구 환경에서 가장 먼저 검토해야 할 후보"라는 것이 본 보고서의 결론이다.</strong> 동급 외산 모델 대비 한국어 성능 격차가 명확하고, 32K 컨텍스트와 GGUF·AWQ 사전양자화 지원 덕분에 폐쇄망 온프레미스 환경에서도 실측 가능한 단계까지 빠르게 도달할 수 있다. <strong>① 도입 적합 조건</strong> — (가) 학내·기관 내부 연구·POC 단계, (나) RAG 기반 한국어 정책·법령 Q&amp;A 시스템, (다) 회의록·보고서 요약 자동화, (라) 외부 노출이 제한된 직원용 어시스턴트가 가장 자연스러운 진입점이다. <strong>② 도입 비적합 조건</strong> — (가) 별도 라이선싱 협의 없이 매출이 발생하는 대국민 서비스, (나) 의료·법률 자문 등 환각 시 피해가 큰 고위험 도메인, (다) 데이터 학습 코퍼스 전체 출처 공개가 조달 요건인 사업은 본 모델만으로는 부적합하다. <strong>③ 권장 검증·POC 절차</strong> — 1) <strong>도메인 특화 평가셋 구축</strong> : 자체 민원/법령 100~300건으로 골든셋을 만들고 정확도·관련성·환각률을 측정. 2) <strong>RAG 결합 베이스라인 확보</strong> : Ko-LongRAG·Ko-WebRAG 결과가 시사하듯, 본 모델은 RAG 친화적이므로 단독 추론보다 BM25/임베딩 검색과 결합한 답변 품질을 측정해야 한다. 3) <strong>안전 필터 레이어 추가</strong> : NIA 신뢰성 벤치마크 결과를 근거로 외부 노출 채널에는 별도 toxic·bias 필터를 의무화한다. 4) <strong>경량화 실측</strong> : Q4_K_M GGUF에서의 한국어 응답 품질 저하 정도와 추론 속도(token/s)를 동일 인프라에서 측정. 5) <strong>라이선스 트랙</strong> : 기술 검증과 병행해 LG AI Research와 commercial license 협의를 조기에 시작해야 운영 전환 시점에 병목이 생기지 않는다. <strong>④ 차순위 검토 후보</strong> — 본 모델로 검증한 결과 한국어 품질이 더 필요하다면 EXAONE 3.5 7.8B(같은 라이선스), 라이선스 자유도가 더 필요하다면 Kakao Kanana 시리즈(Apache 2.0) 또는 Qwen 2.5 7B(Apache 2.0)를 비교군으로 검토할 것을 권한다.</div>
-  </div>
+    <div class="body" contenteditable="true" data-ph="이 모델을 실제 조직 업무에 도입한다면 어떤 조건에서 적합한지, 어떤 추가 검증·POC가 필요한지 본인 의견을 작성합니다.">
+<strong>EXAONE-3.5-2.4B-Instruct는 공공기관의 보안성과 한국어 특화 성능을 동시에 충족해야 하는 한국석유관리원형 '온프레미스(On-premise) AI 서비스' 구축에 가장 최적화된 SLM(소형언어모델) 후보군으로 평가된다.</strong><br>
+<strong>① 도입 적합 조건(Go/No-Go Decision Criteria)</strong> — 본 모델 도입이 성과로 이어지기 위한 핵심 전제 조건은 다음 셋이다.<br>
+(가) <strong>보안·폐쇄망 환경의 필수성</strong>: 외부 API 호출이 불가능한 검사 현장이나 내부 기밀 문서(시험 매뉴얼 등)를 다루는 온프레미스 환경일 때 도입 가치가 극대화된다.<br>
+(나) <strong>한국어 법률·행정 도메인 특화 업무</strong>: 일반적인 대화가 아닌 「석유사업법」 등 복잡한 조문 해석과 한국어 멀티턴 질의응답이 핵심인 업무일 때 동급 외산 모델 대비 우위가 명확하다(03 섹션의 KoMT-Bench 7.24·LogicKor 8.51 결과 참조).<br>
+(다) <strong>리소스 최적화 필요성</strong>: 고사양 GPU 인프라 예산이 제한적인 상황에서 일반 PC급 하드웨어(GGUF 양자화 활용)로도 실무 적용이 가능한 경량 모델이 필요한 경우.<br>
+<strong>② 단계별 검증·PoC 전략</strong> — 실제 업무 투입 전 기술적 불확실성을 해소하기 위해 3단계 PoC를 제안한다.<br>
+<strong>Step 1. K-Petro 전용 골든셋(Golden Set) 구축 및 정량 평가</strong>: 「석유사업법」 본법·시행령·시행규칙·내부 지침서 기반의 자주 질문하는 질의응답 50건을 추출하여 '조문 인용 정확도(Citation Accuracy)'와 '할루시네이션(환각) 발생률'을 집중 측정한다.<br>
+<strong>Step 2. RAG 파이프라인 최적화 검증</strong>: 단순 검색이 아닌, 한국어 임베딩 모델(Ko-BGE 등)과의 조합을 통해 법령의 '조-항-호' 체계를 모델이 얼마나 정확하게 인지하고 맥락을 연결하는지 비교 테스트한다.<br>
+<strong>Step 3. 경량화·추론 속도 실측</strong>: 단일 GPU(RTX 4090급) 또는 CPU 환경에서 GGUF(Q4_K_M) 양자화 모델의 토큰 생성 속도(TPS)를 측정하여, 실제 직원이 업무 시 체감하는 응답 지연 시간을 검증한다.<br>
+<strong>③ 리스크 관리 방안(Risk Mitigation)</strong><br>
+(가) <strong>라이선스 문제 해결</strong>: 현재 NC(비상업용) 라이선스이므로, PoC 단계에서 기술적 효용성을 먼저 입증한 후 실제 운영 시스템 배포 전 LG AI Research와의 별도 라이선스 협의(Commercial Tier)를 해야 한다.<br>
+(나) <strong>신뢰성 보완</strong>: 2.4B 모델의 한계인 낮은 신뢰성(Bias·Hate 등, 07 섹션의 NIA 신뢰성 평가 결과 참조)을 보완하기 위해, 시스템 프롬프트(System Prompt) 수준에서 "법령 근거가 없는 답변 금지" 및 "인간 검토 필수" 가이드라인을 강제하는 안전장치를 설계한다.<br>
+<strong>④ 결론 및 제언</strong> — EXAONE-3.5-2.4B는 '한국어 성능'과 '경량 배포성'이라는 두 마리 토끼를 잡은 모델이다. 초기에는 직원 전용 '법령·규정 챗봇'으로 시작하여 데이터 축적과 모델 미세 조정(Fine-tuning)을 거친다면, 향후 한국석유관리원의 AX(AI 전환)를 가속화하는 핵심 엔진으로 자리매김할 수 있을 것으로 판단된다.</div>
 
   <!-- ========== SECTION 9 ========== -->
   <div class="sec">
@@ -708,7 +735,6 @@ body.edit-mode::after{
     <div class="label">Submission · 제출 정보</div>
     <p><strong style="color:var(--ink);font-weight:700">GitHub Repository 주소:</strong> <span contenteditable="true" data-ph="https://github.com/본인아이디/slm-model-report-소속-이름">https://github.com/yonghwan86/slm-model-report-kpetro-yhkwon</span></p>
     <p><strong style="color:var(--ink);font-weight:700">파일명 예시:</strong> 한국석유관리원_권용환_slm_report.html</p>
-    <p style="margin-top:3mm;font-size:10pt;color:var(--ink-mute)">최종 제출 시 EDIT 버튼을 눌러 모든 항목을 채운 뒤, [HTML 저장] 버튼으로 파일을 다운로드해 GitHub Repository에 업로드하세요. 또는 EDIT하지 않고 동일한 양식 그대로 생성형 AI(Claude·ChatGPT 등)에 첨부해 채움을 요청해도 무방합니다.</p>
   </div>
 
 </section>
@@ -791,4 +817,4 @@ document.addEventListener('keydown', (e) => {
 
 
 
-<div id="__toast" style="position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgb(15, 23, 42); color: rgb(255, 255, 255); padding: 12px 24px; border-radius: 24px; font: 700 11px Pretendard, sans-serif; letter-spacing: 0.6px; box-shadow: rgba(15, 23, 42, 0.4) 0px 8px 28px; z-index: 400; border: 1px solid rgb(37, 99, 235); opacity: 0; transition: 0.3s;">✓ 한국석유관리원_권용환_slm_report.html 다운로드 완료</div></body></html>
+</body></html>
